@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main-container">
+    <add-counter @create-counter="createCounter"></add-counter>
+    <counter-template
+      v-for="(item, index) in counterSteps"
+      :key="index"
+      :index="index"
+      :stepValue="item"
+    ></counter-template>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AddCounter from "./components/AddCounter.vue";
+import CounterTemplate from "./components/CounterTemplate.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { AddCounter, CounterTemplate },
+  data() {
+    return {
+      counterSteps: [1, 3, -2.6],
+    };
+  },
+  methods: {
+    createCounter(value) {
+      console.log(value);
+      this.counterSteps.push(value);
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.main-container {
+  display: flex;
 }
 </style>
