@@ -19,7 +19,11 @@ export default {
   methods: {
     runCounter(value) {
       let newestValue = parseFloat(this.defaultValue) + parseFloat(value);
-      this.defaultValue = newestValue.toFixed(1);
+      if (Number.isInteger(newestValue)) {
+        this.defaultValue = newestValue;
+      } else {
+        this.defaultValue = newestValue.toFixed(1);
+      }
     },
   },
 };
