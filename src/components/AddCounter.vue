@@ -6,22 +6,33 @@
       @input="isValid"
       class="counter-input"
       placeholder="Enter your number"
+      @keydown.enter="createCounter"
     />
-    <button class="add-counter">Add counter</button>
+    <button class="add-counter" @click="createCounter">Add counter</button>
   </div>
 </template>
 
 <style scoped></style>
 <script>
 export default {
+  emits: ["create-counter"],
   data() {
     return {
-      inputNumber: null,
+      inputNumber: 0,
     };
   },
   methods: {
     isValid() {
-      this.inputNumber = this.inputNumber.match(/^-?\d+\.?\d{0,1}/);
+      if (this.inputNumber.length == 0) {
+        return;
+      } else {
+        this.inputNumber = this.inputNumber.match(/^-?\d+\.?\d{0,1}/);
+        this.inputNumber = parseFloat(this.inputNumber[0]);
+      }
+    },
+    createCounter() {
+      this.$emit("create-counter", this.inputNumber);
+      this.inputNumber = 0;
     },
   },
 };
