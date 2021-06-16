@@ -1,24 +1,12 @@
-# yasna-project
+# Yasna Frontend Challenge
 
-## Project setup
-```
-npm install
-```
+### Live Preview
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+See [Live Preview](http://yasnateam-challenge.vercel.app/).
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Project Log
+This was a hire challenge for Yasna team, I've used animations along side vue js, a little error handling (not much styling tho) and etc.
+It's a pretty simple project, not much to describe.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Note to myself
+I must learn some UI Design if i want to be able to make a delightful UI on my own!
