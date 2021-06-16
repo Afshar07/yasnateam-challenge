@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     isValid() {
-      // Remove the error if any number typed into the input
+      // Remove the error if any number was typed into the input
       if (this.inputNumber) {
         this.notValid = false;
       }
