@@ -46,15 +46,15 @@ export default {
 <style scoped>
 .container {
   margin-top: 3rem;
-  border: 1px solid #99007f;
-  border-top: 3px solid #99007f;
+  border: 1px solid #346751;
+  border-top: 3px solid #346751;
   width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-
+  background-color: #fff;
 }
 .counter-input {
   margin: 1rem;
@@ -71,17 +71,17 @@ export default {
 }
 .add-counter-btn {
   margin: 1rem;
-  border: 1px solid #9b0000;
+  border: 1px solid #719dd8;
   cursor: pointer;
   width: 27%;
   height: 50%;
   background-color: transparent;
   border-radius: 50px;
-  color: #9b0000;
+  color: #000;
 }
 .add-counter-btn:hover {
-  border: 1px solid #47a0c2;
-  background-color: #47a0c2;
+  border: 1px solid #719dd8;
+  background-color: #719dd8;
   color: #fff;
 }
 </style>
