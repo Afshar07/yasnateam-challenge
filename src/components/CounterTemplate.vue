@@ -3,8 +3,14 @@
     <div class="counter-title">
       <h2 class="title">Step {{ this.index + 1 }}</h2>
     </div>
-      <p class="step-value">Value: {{ this.stepValue }}</p>
-    <h2>{{ this.defaultValue }}</h2>
+    <div class="value-container">
+      <h2 class="current-value">{{ this.defaultValue }}</h2>
+    </div>
+    <div class="step-value-container">
+      <p class="step-value">
+        <span class="value-text">Value:</span> {{ this.stepValue }}
+      </p>
+    </div>
     <button @click.prevent="runCounter(this.stepValue)" class="add-button">
       RUN
     </button>
@@ -42,12 +48,13 @@ export default {
 .counter-container {
   margin: 2rem 3rem 1rem 3rem;
   border-radius: 5px;
-  border: 1px solid #08a878;
-  border-top: 3px solid #08a878;
+  border: 1px solid #346751;
+  border-top: 3px solid #346751;
   display: flex;
   flex-direction: column;
   min-width: 20vw;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 .counter-title {
   display: flex;
@@ -64,6 +71,10 @@ export default {
   padding: 0.6rem 0.5rem 0.5rem 0.3rem;
   margin: 0;
   font-size: 0.85rem;
+  color: red;
+}
+.value-text {
+  color: #000;
 }
 .add-button {
   width: 50%;
@@ -71,12 +82,32 @@ export default {
   margin-bottom: 1rem;
   align-self: center;
   background-color: transparent;
-  border: 1px solid #08a878;
+  border: 1px solid #719dd8;
   border-radius: 20px;
   cursor: pointer;
 }
 .add-button:hover {
-  background-color: #08a878;
+  background-color: #719dd8;
   color: #fff;
+}
+.value-container {
+  margin-top: 1rem;
+  width: 30%;
+  height: 40%;
+  border: 1px solid #346751;
+  border-radius: 50%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.current-value {
+  text-align: center;
+  font-weight: normal;
+  color: rgb(189, 101, 0);
+}
+.step-value-container {
+  text-align: center;
+  margin: 1rem;
 }
 </style>
