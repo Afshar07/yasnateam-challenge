@@ -5,10 +5,10 @@
       v-model="inputNumber"
       @input="isValid"
       class="counter-input"
-      placeholder="Enter your number"
+      placeholder="Enter your step value..."
       @keydown.enter="createCounter"
     />
-    <button class="add-counter" @click="createCounter">Add counter</button>
+    <button class="add-counter-btn" @click="createCounter">Add counter</button>
   </div>
 </template>
 
@@ -18,41 +18,70 @@ export default {
   emits: ["create-counter"],
   data() {
     return {
-      inputNumber: 0,
+      inputNumber: null,
     };
   },
   methods: {
     isValid() {
-      if (this.inputNumber.length == 0) {
-        return;
-      } else {
-        // Check the input for only one decimal
-        this.inputNumber = this.inputNumber.match(/^-?\d+\.?\d{0,1}/);
+      // Check the input for only one decimal
+      this.inputNumber = this.inputNumber.match(/^-?\d+\.?\d{0,1}/);
 
-        // Get the object made with RegEx and convert it into Number
-        this.inputNumber = parseFloat(this.inputNumber[0]);
-      }
+      // Get the object made with RegEx and convert it into Number
+      this.inputNumber = parseFloat(this.inputNumber[0]);
     },
     createCounter() {
-      // Send the value to parent and make the input 0 again
-      this.$emit("create-counter", this.inputNumber);
-      this.inputNumber = 0;
+      if (this.inputNumber == null) {
+        // Alert if the input is empty
+        alert("Enter a number!");
+      } else {
+        // Send the value to parent and make the input 0 again
+        this.$emit("create-counter", this.inputNumber);
+        this.inputNumber = 0;
+      }
     },
   },
 };
 </script>
 
 <style scoped>
+.container {
+  margin-top: 3rem;
+  border: 1px solid #99007f;
+  border-top: 3px solid #99007f;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+}
 .counter-input {
   margin: 1rem;
+  padding: 0.3rem;
+  border: none;
   border: 1px solid #47a0c2;
+  border-radius: 5px;
+  width: 60%;
 }
 .counter-input:focus {
   outline: none;
   border: none;
-  border-bottom: 2px solid #47a0c2;
+  border: 2px solid #47a0c2;
 }
-.counter-input {
-  width: 40%;
+.add-counter-btn {
+  margin: 1rem;
+  border: 1px solid #9b0000;
+  cursor: pointer;
+  width: 27%;
+  height: 50%;
+  background-color: transparent;
+  border-radius: 50px;
+  color: #9b0000;
+}
+.add-counter-btn:hover {
+  border: 1px solid #47a0c2;
+  background-color: #47a0c2;
+  color: #fff;
 }
 </style>
