@@ -103,7 +103,7 @@ export default {
 .current-value {
   text-align: center;
   font-weight: normal;
-  color: rgb(189, 101, 0);
+  color: #3f78c2;
 }
 .step-value-container {
   text-align: center;

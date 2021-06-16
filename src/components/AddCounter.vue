@@ -32,11 +32,11 @@ export default {
     createCounter() {
       if (this.inputNumber == null) {
         // Alert if the input is empty
-        alert("Enter a number!");
+        alert("Input is empty, Enter a number!");
       } else {
-        // Send the value to parent and make the input 0 again
+        // Send the value to parent and make the input empty again
         this.$emit("create-counter", this.inputNumber);
-        this.inputNumber = 0;
+        this.inputNumber = null;
       }
     },
   },
