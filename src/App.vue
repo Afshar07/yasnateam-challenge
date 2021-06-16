@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     createCounter(value) {
-      console.log(value);
+      // Push the new declared value to create new counter
       this.counterSteps.push(value);
     },
   },
