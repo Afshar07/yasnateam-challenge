@@ -53,7 +53,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
 .counter-input {
@@ -78,6 +78,7 @@ export default {
   background-color: transparent;
   border-radius: 50px;
   color: #000;
+  transition: all 0.2s;
 }
 .add-counter-btn:hover {
   border: 1px solid #719dd8;

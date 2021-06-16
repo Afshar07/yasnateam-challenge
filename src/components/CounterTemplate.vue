@@ -85,6 +85,7 @@ export default {
   border: 1px solid #719dd8;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 .add-button:hover {
   background-color: #719dd8;
@@ -94,8 +95,6 @@ export default {
   margin-top: 1rem;
   width: 30%;
   height: 40%;
-  border: 1px solid #346751;
-  border-radius: 50%;
   align-self: center;
   display: flex;
   justify-content: center;

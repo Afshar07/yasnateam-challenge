@@ -23,12 +23,13 @@ export default {
   components: { AddCounter, CounterTemplate },
   data() {
     return {
+      // Default values for render
       counterSteps: [1, 3, -2.6],
     };
   },
   methods: {
     createCounter(value) {
-      // Push the new declared value to create new counter
+      // Push the new declared value to create and render new counter
       this.counterSteps.push(value);
     },
   },
