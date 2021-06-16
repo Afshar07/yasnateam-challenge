@@ -26,11 +26,15 @@ export default {
       if (this.inputNumber.length == 0) {
         return;
       } else {
+        // Check the input for only one decimal
         this.inputNumber = this.inputNumber.match(/^-?\d+\.?\d{0,1}/);
+
+        // Get the object made with RegEx and convert it into Number
         this.inputNumber = parseFloat(this.inputNumber[0]);
       }
     },
     createCounter() {
+      // Send the value to parent and make the input 0 again
       this.$emit("create-counter", this.inputNumber);
       this.inputNumber = 0;
     },
